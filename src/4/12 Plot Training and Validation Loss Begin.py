@@ -75,3 +75,12 @@ print(f"MSE Score: {mse_score}")
 print(f"R2 Score: {r2 * 100}%")
 
 # Plot training and validation loss
+plt.plot(history.history['loss'], label='Training loss', linewidth=2)
+plt.plot(history.history['val_loss'], label='Validation loss', linewidth=2)
+plt.title('Training and Validation loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()
+plt.savefig('output/fig/Training_validation_loss.png')
+plt.clf()  # Clear the current figure

@@ -86,3 +86,5 @@ plt.savefig('output/fig/Training_validation_loss.png')
 plt.clf()  # Clear the current figure
 
 # Save the model for future use
+model.save("output/model/trained_model.h5")
+print("Model saved")

@@ -49,3 +49,17 @@ history = model.fit(
 )
 
 # Predict and inverse transform the predictions
+preds_scaled = model.predict(X_test_reshaped)
+preds = scaler.inverse_transform(preds_scaled)
+
+# Plot the predictions against the actual values
+plt.figure(figsize=(10, 5))
+plt.plot(y_test, label='Actual Value', color='red', linewidth=2)
+plt.plot(preds, label='Predicted Value', color='blue', linewidth=2)
+plt.title('TESLA/USD Predictions')
+plt.xlabel('Sample Index')
+plt.ylabel('TESLA/USD Value')
+plt.legend()
+plt.show()
+plt.savefig('output/fig/TESLA_USD_Predictions.png')
+plt.clf()  # Clear the current figure
