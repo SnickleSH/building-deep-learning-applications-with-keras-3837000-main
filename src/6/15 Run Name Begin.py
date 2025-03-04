@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.callbacks import TensorBoard
 
 # Add run name 
-
+RUN_NAME = "run_256"
 # Load the data
 data = pd.read_csv("input/data/Tesla_Nasdaq_Prediction.csv")
 
@@ -49,7 +49,7 @@ model.compile(optimizer='adam', loss='mse')
 # Add run name to the logger
 
 logger = TensorBoard(
-    log_dir="output/logs",
+    log_dir="output/logs".format(RUN_NAME),
     histogram_freq=5,
     write_graph=True,
     write_images=True
