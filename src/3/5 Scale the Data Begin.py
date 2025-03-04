@@ -20,3 +20,8 @@ target = data['Close/Last'].values
 X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
 
 # Scale the features and target
+scaler = MinMaxScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+y_train_scaled = scaler.fit_transform(y_train.reshape(-1, 1))
+y_test_scaled = scaler.transform(y_test.reshape(-1, 1))

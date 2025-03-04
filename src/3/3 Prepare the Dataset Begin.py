@@ -13,3 +13,8 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("input/data/Tesla_Nasdaq_Prediction.csv")
 
 # Prepare the dataset
+features_df = data.iloc[:,2:]
+print(features_df)
+
+target_df = data['Close/Last']
+print(target_df)

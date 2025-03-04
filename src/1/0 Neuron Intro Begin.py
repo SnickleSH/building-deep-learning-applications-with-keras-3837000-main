@@ -10,6 +10,8 @@ class DataAnalysis:
         self.data = data
 
     def display_data_as_table(self):
+        table = tabulate(self.data, headers='keys', tablefmt='fancy_grid')
+        print("Original Data:")
         
 
     def create_scatter_plot(self):

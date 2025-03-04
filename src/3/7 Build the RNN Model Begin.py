@@ -31,3 +31,11 @@ X_train_reshaped = X_train_scaled.reshape((X_train_scaled.shape[0], 1, X_train_s
 X_test_reshaped = X_test_scaled.reshape((X_test_scaled.shape[0], 1, X_test_scaled.shape[1]))
 
 # Build the RNN model
+model = Sequential([
+  SimpleRNN(units=256, input_shape=(X_train_reshaped.shape[1], X_train_reshaped.shape[2]), return_sequences=True),
+  Dropout(0.25),
+  SimpleRNN(units=128, return_sequences=True),
+  Dropout(0.25),
+  SimpleRNN(units=64),
+  Dense(units=1)
+])

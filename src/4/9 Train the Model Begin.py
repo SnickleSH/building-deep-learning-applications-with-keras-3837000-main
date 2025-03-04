@@ -44,3 +44,4 @@ model = Sequential([
 model.compile(optimizer='adam', loss='mse')
 
 # Train the model
+history = model.fit(X_train_reshaped, y_train_scaled, epochs=50, batch_size=32, validation_split=0.1, verbose=1)
